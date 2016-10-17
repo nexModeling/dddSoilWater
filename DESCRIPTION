@@ -1,0 +1,18 @@
+Package: dddSoilWater
+Type: Package
+Version: 0.0.0.9000
+Authors@R: c(
+            person("Thomas", "Skaugen", , "ths@nve.no", c("aut")),
+            person("Zelalem", "Tadege", , "zme@nve.no", c("aut")),
+            person("Jean-Marie", "Lepioufle", , "jm@nexmodeling.com", c("aut","cre"))
+             )
+Title: Soil Water
+Description: Process the excess of water on soils and bogs
+Depends:
+    R (>= 3.2.5)
+License: GPL-3
+URL: https://github.com/nexmodeling/dddSoilWater
+BugReports: https://github.com/nexmodeling/dddSoilWater/issues
+Encoding: UTF-8
+LazyData: false
+RoxygenNote: 5.0.1
