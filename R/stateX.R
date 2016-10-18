@@ -1,4 +1,4 @@
-#' Processinf the soil water content
+#' Processing the soil water content
 #'
 #' The function \code{stateX()} processes the soil water content both for soils and bogs.
 #' The process follows the expression dZ/dt= G(t) - X(t)- Ea(t) in Skaugen, Peerebom and Nilsson (2015).
