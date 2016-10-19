@@ -2,7 +2,7 @@
 % Please edit documentation in R/stateX.R
 \name{stateX}
 \alias{stateX}
-\title{Processinf the soil water content}
+\title{Processing the soil water content}
 \usage{
 stateX(eatemp, cea, M, D, G, middelsca, R, Z, Gbog, Zbog)
 }

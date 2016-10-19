@@ -2,4 +2,5 @@
 
 export(ea)
 export(excessWater)
+export(init.soilWater)
 export(stateX)
