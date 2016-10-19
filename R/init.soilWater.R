@@ -36,17 +36,15 @@ init.soilWater <-function(method=NULL,path=NULL,Ea,G,X,Eabog,Gbog,Xbog,
 }
 
 init.manual <- function(Ea,G,X,Eabog,Gbog,Xbog){
-  if ( (!is.null(Ea)) && (!is.null(G)) && (!is.null(X)) &&
-       (!is.null(Eabog)) && (!is.null(Gbog)) && (!is.null(Xbog)) ) {
 
-     res <- list(Ea=Ea,
+  res <- list(Ea=Ea,
                  G=G,
                  X=X,
                  Eabog=Eabog,
                  Gbog=Gbog,
                  Xbog=Xbog)
-     return(res)
-  } else stop("NULL arguments in parameters")
+  return(res)
+
 }
 
 init.load <- function(path){
@@ -60,6 +58,10 @@ init.source <- function(path){
 }
 
 init.processed <-function(eatemp,cea,M,D,G,middelsca,R,Z,Gbog,Zbog){
+  if ( (!is.null(eatemp)) && (!is.null(cea)) && (!is.null(M)) &&
+       (!is.null(D)) && (!is.null(G)) && (!is.null(middelsca)) &&
+       (!is.null(R)) && (!is.null(Z)) && (!is.null(Gbog)) && (!is.null(Zbog)) ) {
    res <- stateX(eatemp=eatemp,cea=,M=M,D=D,G=G,middelsca=middelsca,R=R,Z=Z,Gbog=Gbog,Zbog=Zbog)
    return(res)
+   } else stop("NULL arguments in parameters")
 }
