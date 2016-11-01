@@ -29,7 +29,6 @@ init.soilWater <-function(method=NULL,path=NULL,Ea,G,X,Eabog,Gbog,Xbog,
     "manual"    = init.manual(Ea=Ea,G=G,X=X,Eabog=Eabog,Gbog=Gbog,Xbog=Xbog),
     "processed" = init.parocessed(eatemp=eatemp,cea=,M=M,D=D,G=G,middelsca=middelsca,R=R,Z=Z,Gbog=Gbog,Zbog=Zbog),
     "load"      = init.load(path=path),
-    "source"    = init.source(path=path),
     (message=paste0("Invalid method:", method,".")))
 
   return(soilWater)
@@ -52,16 +51,11 @@ init.load <- function(path){
   return(soilWater)
 }
 
-init.source <- function(path){
-  source(paste0(path,"soilWater.R"),local=TRUE)
-  return(soilWater)
-}
-
 init.processed <-function(eatemp,cea,M,D,G,middelsca,R,Z,Gbog,Zbog){
   if ( (!is.null(eatemp)) && (!is.null(cea)) && (!is.null(M)) &&
        (!is.null(D)) && (!is.null(G)) && (!is.null(middelsca)) &&
        (!is.null(R)) && (!is.null(Z)) && (!is.null(Gbog)) && (!is.null(Zbog)) ) {
-   res <- stateX(eatemp=eatemp,cea=,M=M,D=D,G=G,middelsca=middelsca,R=R,Z=Z,Gbog=Gbog,Zbog=Zbog)
+   res <- stateX.soilWater(eatemp=eatemp,cea=,M=M,D=D,G=G,middelsca=middelsca,R=R,Z=Z,Gbog=Gbog,Zbog=Zbog)
    return(res)
    } else stop("NULL arguments in parameters")
 }
