@@ -27,7 +27,7 @@ init.soilWater <-function(method=NULL,path=NULL,Ea,G,X,Eabog,Gbog,Xbog,
 
   soilWater <- switch(method,
     "manual"    = init.manual(Ea=Ea,G=G,X=X,Eabog=Eabog,Gbog=Gbog,Xbog=Xbog),
-    "processed" = init.parocessed(eatemp=eatemp,cea=,M=M,D=D,G=G,middelsca=middelsca,R=R,Z=Z,Gbog=Gbog,Zbog=Zbog),
+    "processed" = init.processed(eatemp=eatemp,cea=,M=M,D=D,G=G,middelsca=middelsca,R=R,Z=Z,Gbog=Gbog,Zbog=Zbog),
     "load"      = init.load(path=path),
     (message=paste0("Invalid method:", method,".")))
 
@@ -47,7 +47,10 @@ init.manual <- function(Ea,G,X,Eabog,Gbog,Xbog){
 }
 
 init.load <- function(path){
-  load(paste0(path,"soilWater.rda"))
+  env <- environment()
+  path <- normalizePath(file.path(path,"soilWater.rda"),mustWork = FALSE)
+  load(path, envir=env)
+  soilWater <- get("soilWater",envir = env)
   return(soilWater)
 }
 
